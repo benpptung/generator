@@ -1,17 +1,19 @@
 [![Express Logo](https://i.cloudup.com/zfY6lL7eFa-3000x3000.png)](http://expressjs.com/)
 
 [Express'](https://www.npmjs.com/package/express) application generator.
+a fork from express-generator, and edit it because the followings:
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![Linux Build][travis-image]][travis-url]
-[![Windows Build][appveyor-image]][appveyor-url]
-[![Gratipay][gratipay-image]][gratipay-url]
+```
+1. incorporate appstackr 0.3.0 and as an appstackr example -- autoprefixer, browser-sync, files watch, browserify enhanced...etc.
+2. add support of swig and drop jade
+3. drop css|less|compass|stylus engine, and use appstackr instead
+4. add initial support of stylesheet, and defaults to scss
+```
 
 ## Installation
 
 ```sh
-$ npm install -g express-generator
+$ npm install -g benpptung/generator
 ```
 
 ## Quick Start
@@ -33,7 +35,7 @@ $ npm install
 Rock and Roll
 
 ```bash
-$ npm start
+$ npm run bsync
 ```
 
 ## Command Line Options
@@ -42,11 +44,10 @@ This generator can also be further configured with the following command line fl
 
     -h, --help          output usage information
     -V, --version       output the version number
-    -e, --ejs           add ejs engine support (defaults to jade)
+    -e, --ejs           add ejs engine support (defaults to swig)
         --hbs           add handlebars engine support
     -H, --hogan         add hogan.js engine support
-    -c, --css <engine>  add stylesheet <engine> support (less|stylus|compass) (defaults to plain css)
-        --git           add .gitignore
+    -c, --css <engine>  initial stylesheet support (less|stylus|scss|css) (defaults to plain scss)
     -f, --force         force on non-empty directory
 
 ## License
