@@ -28,3 +28,9 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
+
+trial
+.idea
+.DS_Store
+bower_components
+npm-debug.log
