@@ -32,6 +32,12 @@ Install dependencies:
 $ npm install
 ```
 
+Stack up the bundles
+```bash
+$ npm run appstack
+```
+
+
 Rock and Roll
 
 ```bash
