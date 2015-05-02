@@ -83,14 +83,11 @@ function createApplication(app_name, path) {
     console.log('   install dependencies:');
     console.log('     $ cd %s && npm install', path);
     console.log();
-    console.log('   devel the app:');
-    console.log('     $ npm run devel');
-    console.log();
-    console.log('   devel the app with browser-sync (use appstackr):');
-    console.log('     $ npm run bsync');
+    console.log('   stack up front-end bundles:');
+    console.log('     $ npm run appstack');
     console.log();
     console.log('   start the app:');
-    console.log('     $ npm start');
+    console.log('     $ npm run bsync');
     console.log();
   }
 
@@ -192,7 +189,7 @@ function createApplication(app_name, path) {
       , version: '0.0.0'
       , private: true
       , scripts: {
-        start: 'node ./bin/www',
+        start: 'NODE_ENV=production node ./bin/www',
         appbuild: 'appbuild',
         appstack: 'appstack',
         appwatch: 'appwatch --server 0.0.0.0:3000',
