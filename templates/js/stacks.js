@@ -14,8 +14,7 @@ module.exports = [
     files: [
       'client/site/env.js',
       'superagent',
-      'node_modules/ractive/ractive-legacy.runtime.min.js',
-      'ractive-events-tap/ractive-events-tap.min.js'
+      'node_modules/ractive/ractive-legacy.runtime.min.js'
     ],
     browserify: {
       exposes: 'ractive-legacy.runtime.min.js:ractive, superagent'
