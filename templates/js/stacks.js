@@ -12,12 +12,10 @@ module.exports = [
     name: 'base/site',
     nature: 'js',
     files: [
-      'client/site/env.js',
-      'superagent',
-      'node_modules/ractive/ractive-legacy.runtime.min.js'
+      'superagent'
     ],
     browserify: {
-      exposes: 'ractive-legacy.runtime.min.js:ractive, superagent'
+      exposes: '*'
     }
   },
   {
