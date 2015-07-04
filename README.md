@@ -1,10 +1,10 @@
 [![Express Logo](https://i.cloudup.com/zfY6lL7eFa-3000x3000.png)](http://expressjs.com/)
 
-[Express'](https://www.npmjs.com/package/express) application generator.
+[Express](https://www.npmjs.com/package/express) application generator.
 a fork from express-generator, and edit it because the followings:
 
 ```
-1. incorporate appstackr 0.3.0 and as an appstackr example -- autoprefixer, browser-sync, files watch, browserify enhanced...etc.
+1. incorporate appstackr 0.3.x and as an appstackr example -- autoprefixer, browser-sync, files watch, browserify enhanced...etc.
 2. add support of swig and drop jade
 3. drop css|less|compass|stylus engine, and use appstackr instead
 4. add initial support of stylesheet, and defaults to scss

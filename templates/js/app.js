@@ -1,4 +1,5 @@
-var path = require('path');
+var path = require('path'),
+    join = path.join;
 
 var express = require('express');
 var favicon = require('serve-favicon');
@@ -14,7 +15,7 @@ var app = express();
 
 // app setup
 app.disable('etag');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', join(__dirname, 'views'));
 app.set('view engine', '{views}');
 
 if (app.get('env') != 'production') {
@@ -23,12 +24,12 @@ if (app.get('env') != 'production') {
 
 app.use(dhs);
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+//app.use(favicon(join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(join(__dirname, 'public')));
 app.use(function(req, res, next) {
   res.set({
     "Cache-Control": "private, no-cache, no-store, must-revalidate",

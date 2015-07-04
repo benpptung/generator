@@ -78,13 +78,13 @@ describe('express(1)', function () {
         + '    "start": "node ./bin/www"\n'
         + '  },\n'
         + '  "dependencies": {\n'
-        + '    "body-parser": "~1.12.4",\n'
+        + '    "body-parser": "~1.13.1",\n'
         + '    "cookie-parser": "~1.3.5",\n'
         + '    "debug": "~2.2.0",\n'
-        + '    "express": "~4.12.4",\n'
-        + '    "jade": "~1.9.2",\n'
-        + '    "morgan": "~1.5.3",\n'
-        + '    "serve-favicon": "~2.2.1"\n'
+        + '    "express": "~4.13.0",\n'
+        + '    "jade": "~1.11.0",\n'
+        + '    "morgan": "~1.6.1",\n'
+        + '    "serve-favicon": "~2.3.0"\n'
         + '  }\n'
         + '}');
     });
