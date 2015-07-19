@@ -208,7 +208,7 @@ function createApplication(app_name, path) {
           'domain-http-server': '^1.0.0'
       }
       , devDependencies: {
-        'appstackr': '^0.3.7',
+        'appstackr': '^0.3.8',
         'mocha': '~2.2.5',
         'expect.js': '^0.3.1',
         'supertest': '^1.0.1',
