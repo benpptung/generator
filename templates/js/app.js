@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var dhs = require('domain-http-server');{swig.require}
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var config = require('./config');
 
 var app = express();
 
@@ -29,7 +29,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(join(__dirname, 'public')));
+app.use(express.static(join(__dirname, 'public'), config.staticOpt(app)));
 app.use(function(req, res, next) {
   res.set({
     "Cache-Control": "private, no-cache, no-store, must-revalidate",
@@ -40,7 +40,6 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

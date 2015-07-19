@@ -100,8 +100,8 @@ function createApplication(app_name, path) {
   var app = loadTemplate('js/app.js');
   var stacks = loadTemplate('js/stacks.js');
   var www = loadTemplate('js/www');
+  var config = loadTemplate('js/config.js');
   var index = loadTemplate('js/routes/index.js');
-  var users = loadTemplate('js/routes/users.js');
 
   // CSS
   var css = loadTemplate('css/style.css');
@@ -134,7 +134,6 @@ function createApplication(app_name, path) {
 
     mkdir(path + '/routes', function(){
       write(path + '/routes/index.js', index);
-      write(path + '/routes/users.js', users);
       complete();
     });
 
@@ -214,7 +213,9 @@ function createApplication(app_name, path) {
         'supertest': '^1.0.1',
         'html5shiv': '^3.7.2',
         'respond.js': '^1.4.2',
-        'superagent': '^1.2.0'
+        'superagent': '^1.2.0',
+        'insert-css': '^0.2.0',
+        'es5-shim': '^4.1.9'
       }
     };
 
@@ -252,6 +253,7 @@ function createApplication(app_name, path) {
     // write files
     write(path + '/package.json', JSON.stringify(pkg, null, 2));
     write(path + '/app.js', app);
+    write(path + '/config.js', config);
     mkdir(path + '/bin', function(){
       www = www.replace('{name}', app_name);
       write(path + '/bin/www', www, 0755);
