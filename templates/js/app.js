@@ -7,6 +7,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var dhs = require('domain-http-server');{swig.require}
+var compression = require('compression');
 
 var routes = require('./routes/index');
 var config = require('./config');
@@ -15,7 +16,7 @@ var app = express();
 
 // app setup
 app.disable('etag');
-app.set('views', join(__dirname, 'views'));
+app.set('views', config.views(app));
 app.set('view engine', '{views}');
 
 if (app.get('env') != 'production') {
@@ -29,7 +30,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(join(__dirname, 'public'), config.staticOpt(app)));
+app.use(compression());
+
+if (app.get('env') != 'production') {
+  app.use(express.static(join(__dirname, 'public')));
+}
+
 app.use(function(req, res, next) {
   res.set({
     "Cache-Control": "private, no-cache, no-store, must-revalidate",
