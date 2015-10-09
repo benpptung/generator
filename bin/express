@@ -75,7 +75,7 @@ function confirm(msg, callback) {
  */
 
 function createApplication(app_name, path) {
-  var wait = 6;
+  var wait = 7;
 
   console.log();
   function complete() {
@@ -256,7 +256,10 @@ function createApplication(app_name, path) {
     // write files
     write(path + '/package.json', JSON.stringify(pkg, null, 2));
     write(path + '/app.js', app);
-    write(path + '/config.js', config);
+    mkdir(path + '/config', function() {
+      write(path + '/config/index.js', config);
+      complete();
+    });
     mkdir(path + '/bin', function(){
       www = www.replace('{name}', app_name);
       write(path + '/bin/www', www, 0755);
