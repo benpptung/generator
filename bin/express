@@ -209,7 +209,7 @@ function createApplication(app_name, path) {
       }
       , devDependencies: {
         'animate.css': '^3.4.0',
-        'appstackr': '^0.3.15',
+        'appstackr': '^0.3.16',
         'react': '^0.13.3',
         'mocha': '~2.2.5',
         'expect.js': '^0.3.1',
