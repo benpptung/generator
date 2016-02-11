@@ -198,7 +198,7 @@ function createApplication(app_name, path) {
         bsync: 'npm start & npm run appwatch'
       }
       , dependencies: {
-          'express': '^4.13.3',
+          'express': '^4.13.4',
           'body-parser': '^1.13.2',
           'cookie-parser': '^1.3.5',
           'debug': '^2.2.0',
@@ -210,7 +210,16 @@ function createApplication(app_name, path) {
       , devDependencies: {
         'animate.css': '^3.4.0',
         'appstackr': '^0.3.16',
-        'react': '^0.13.3',
+        'react': '^0.14.7',
+        'react-dom': 'benpptung/react-dom',
+        'react-addons-css-transition-group': 'benpptung/react-addons-css-transition-group',
+        'react-addons-update': 'benpptung/react-addons-update',
+        'react-addons-transition-group': 'benpptung/react-addons-transition-group',
+        'react-addons-shallow-compare': 'benpptung/react-addons-shallow-compare',
+        'react-addons-pure-render-mixin': 'benpptung/react-addons-pure-render-mixin',
+        'react-addons-linked-state-mixin': 'benpptung/react-addons-linked-state-mixin',
+        'react-addons-clone-with-props': 'benpptung/react-addons-clone-with-props',
+        'react-addons-create-fragment': 'benpptung/react-addons-create-fragment',
         'mocha': '^2.2.5',
         'expect.js': '^0.3.1',
         'supertest': '^1.0.1',
