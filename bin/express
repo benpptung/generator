@@ -197,6 +197,11 @@ function createApplication(app_name, path) {
         appwatch: 'appwatch --server 0.0.0.0:3000',
         bsync: 'npm start & npm run appwatch'
       }
+      , browserify: {
+          transform: [
+            'envify'
+          ]
+      }
       , dependencies: {
           'express': '^4.13.4',
           'body-parser': '^1.13.2',
@@ -221,6 +226,7 @@ function createApplication(app_name, path) {
         'react-addons-clone-with-props': 'benpptung/react-addons-clone-with-props',
         'react-addons-create-fragment': 'benpptung/react-addons-create-fragment',
         'mocha': '^2.2.5',
+        'envify': '^3.4.0',
         'expect.js': '^0.3.1',
         'supertest': '^1.0.1',
         'html5shiv': '^3.7.2',

@@ -1,22 +1,22 @@
-var path = require('path'),
-    join = path.join;
+'use strict';
 
-var express = require('express');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var dhs = require('domain-http-server');{swig.require}
-var compression = require('compression');
-
-var routes = require('./routes/index');
-var config = require('./config');
+const STATUS_CODES = require('http').STATUS_CODES;
+const join = require('path').join;
+const express = require('express');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const dhs = require('domain-http-server');{swig.require}
+const compression = require('compression');
+const routes = require('./routes/index');
+const config = require('./config');
 
 var app = express();
 
 // app setup
 app.disable('etag');
-app.set('views', config.views(app));
+app.set('views', config.views);
 app.set('view engine', '{views}');
 
 if (app.get('env') != 'production') {
@@ -31,10 +31,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(compression());
-
-if (app.get('env') != 'production') {
-  app.use(express.static(join(__dirname, 'public')));
-}
+app.use(express.static(config.publicDir));
 
 app.use(function(req, res, next) {
   res.set({
@@ -61,7 +58,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     code: res.statusCode,
-    message: err.message,
+    message: app.get('env') == 'production' ? STATUS_CODES[res.statusCode] : err.message,
     error: app.get('env') == 'production' ? {} : err
   });
 });
