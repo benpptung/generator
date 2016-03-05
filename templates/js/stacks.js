@@ -40,16 +40,5 @@ module.exports = [
     browserify: {
       exposes: '*', externals: 'react'
     }
-  },
-  {
-    name: 'base/iefix',
-    nature: 'js',
-    files: [
-      'node_modules/es5-shim/es5-shim.min.js',
-      'node_modules/es5-shim/es5-sham.min.js',
-      'node_modules/console-polyfill/index.js',
-      'node_modules/html5shiv/dist/html5shiv.min.js',
-      'node_modules/respond.js/dest/respond.matchmedia.addListener.min.js'
-    ]
   }
 ];
